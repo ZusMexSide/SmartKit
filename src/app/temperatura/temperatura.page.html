@@ -1,0 +1,28 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Temperatura & Humedad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <br><br><br><br>
+    <div class="container">
+      <div class="row">
+        <h3 class="ion-text-center">TODAY</h3>
+        <p class="ion-text-center">Lun, 3 Enero</p>
+        <h1 class="ion-text-2">24°c</h1>
+          <h3 class="ion-text-h">Humedad: 65%</h3>
+      </div>
+    </div>
+    <br><br><br>
+
+    <div class="container">
+      <div class="row">
+        <h5>Temperatura</h5>
+        <canvas #chartTemp></canvas>
+      </div>
+    </div>
+</ion-content>

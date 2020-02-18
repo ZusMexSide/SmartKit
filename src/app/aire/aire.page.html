@@ -1,0 +1,78 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Calidad del Aire</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <h1 class="ion-text-center">En este Momento</h1>
+  <br>
+
+  <div class="wrapper">
+    <div class="gauge">
+      <div class="slice-colors">
+        <div class="st slice-item"></div>
+        <div class="st slice-item"></div>
+        <div class="st slice-item"></div>
+        <div class="st slice-item"></div>
+        <div class="st slice-item"></div>
+      </div>
+      <div class="needle"></div>
+      <div class="gauge-center"></div>
+    </div>
+  </div>
+  <br><br>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <h3 class="ion-text-right"> <i class="fa fa-circle tm"></i> 0 - 20</h3>
+          <p class="ion-text-right mgt">Excelente</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <h3 class="ion-text-left"> <i class="fa fa-circle tm2"></i> 21 - 40</h3>
+        <p class="ion-text-left mgt">Buena</p>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-col>
+        <div>
+          <h4 class="ion-text-center"> <i class="fa fa-circle tm3"></i> 41 - 60</h4>
+          <p class="ion-text-center mgt">Moderada</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <h4 class="ion-text-center"> <i class="fa fa-circle tm4"></i> 61 - 80</h4>
+          <p class="ion-text-center mgt">Mala</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <h4 class="ion-text-center"> <i class="fa fa-circle tm5"></i> 81 - 100</h4>
+          <p class="ion-text-center mgt">Muy Mala</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br>
+  <p></p>
+  
+  <div class="container">
+    
+    <div class="row">
+      <h5>Calidad del Aire</h5>
+      <canvas #chartTemp></canvas>
+    </div>
+  
+  </div>
+
+
+</ion-content>
