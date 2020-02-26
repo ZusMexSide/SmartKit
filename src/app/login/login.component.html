@@ -6,17 +6,12 @@
       <label class="subtitle">Sign in to access your account</label>
     </div>
     <div class="footer">
-      <ion-button class="btn" color="tertiary" routerLink="/home">
+      <ion-button (click)="authService.loginWithGoogle()" class="btn" color="tertiary" >
         <ion-item>
           <i class="fab fa-google-plus-g" slot="start"></i>
           <ion-label>Sign in with Google</ion-label>
         </ion-item>
-      </ion-button>
-      <br>
-      <label class="subtitle">Don't have an account?</label>
-      <br>  
-      <a href="">Register</a>
-      <br>
+      </ion-button>      
     </div>
   </div>
 </ion-content>

@@ -8,10 +8,21 @@
 </ion-header>
 
 <ion-content padding class="background">
+  <div >
+    <ion-list>
+      <ion-item *ngFor="let a of air">
+        <ion-title>{{a.room}}</ion-title>
+        <!-- <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle> -->
+        <ion-button  slot="end" size="small" (click)="cargarGauge(a.id)">View</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
   <h1 class="ion-text-center">En este Momento</h1>
+  <div id=" gaugeArea"> </div>
+
   <br>
 
-  <div class="wrapper">
+  <!-- <div class="wrapper">
     <div class="gauge">
       <div class="slice-colors">
         <div class="st slice-item"></div>
@@ -24,18 +35,19 @@
       <div class="gauge-center"></div>
     </div>
   </div>
+   -->
   <br><br>
 
   <ion-grid>
     <ion-row>
       <ion-col>
         <div>
-          <h3 class="ion-text-right"> <i class="fa fa-circle tm"></i> 0 - 20</h3>
+          <h3 class="ion-text-right"> <i class="fa fa-circle tm"></i> 0 - 50</h3>
           <p class="ion-text-right mgt">Excelente</p>
         </div>
       </ion-col>
       <ion-col>
-        <h3 class="ion-text-left"> <i class="fa fa-circle tm2"></i> 21 - 40</h3>
+        <h3 class="ion-text-left"> <i class="fa fa-circle tm2"></i> 51 - 100</h3>
         <p class="ion-text-left mgt">Buena</p>
       </ion-col>
     </ion-row>
@@ -43,19 +55,13 @@
     <ion-row>
       <ion-col>
         <div>
-          <h4 class="ion-text-center"> <i class="fa fa-circle tm3"></i> 41 - 60</h4>
-          <p class="ion-text-center mgt">Moderada</p>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          <h4 class="ion-text-center"> <i class="fa fa-circle tm4"></i> 61 - 80</h4>
+          <h4 class="ion-text-center"> <i class="fa fa-circle tm4"></i> 101 - 150</h4>
           <p class="ion-text-center mgt">Mala</p>
         </div>
       </ion-col>
       <ion-col>
         <div>
-          <h4 class="ion-text-center"> <i class="fa fa-circle tm5"></i> 81 - 100</h4>
+          <h4 class="ion-text-center"> <i class="fa fa-circle tm5"></i> 150+ </h4>
           <p class="ion-text-center mgt">Muy Mala</p>
         </div>
       </ion-col>
@@ -64,15 +70,24 @@
 
   <br>
   <p></p>
-  
+<!-- 
   <div class="container">
-    
+
     <div class="row">
       <h5>Calidad del Aire</h5>
       <canvas #chartTemp></canvas>
     </div>
-  
-  </div>
 
+  </div> -->
 
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="presentModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-content>
+  <svg class = "chart" id = "chart_gauge"> 
+
+  </svg>
 </ion-content>
