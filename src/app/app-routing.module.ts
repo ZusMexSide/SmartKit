@@ -20,6 +20,14 @@ const routes: Routes = [
     path: 'alert',
     loadChildren: () => import('./alert/alert.module').then( m => m.AlertPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'slideshow',
+    loadChildren: () => import('./slideshow/slideshow.module').then( m => m.SlideshowPageModule)
+  },
 ];
 
 @NgModule({

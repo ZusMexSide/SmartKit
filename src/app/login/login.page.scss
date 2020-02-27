@@ -1,0 +1,21 @@
+.background{
+    //--ion-background-color: #445edb;
+    font-family: sans-serif;
+}
+
+.img{
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    padding-block-start: 40px;
+    padding-block-end: 30px;
+}
+
+.btn-primary{
+    --background: #445edb;
+}
+
+.btn1{
+    --background: #000000;
+    --border-radius: 100%;
+}
