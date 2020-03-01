@@ -34,7 +34,13 @@
     <ion-label>Enviar Notificaciones por Correo</ion-label>
     <ion-toggle name="blueberry" checked></ion-toggle>
   </ion-item>
+  
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <h3 class="ion-text-center">from</h3>
   <h1 class="ion-text-center difT">IoTechnology</h1>
+  <br>
+  <section >
+    <ion-button expand="block" color="danger" (click)="authService.logOutFirebase()">LOG OUT</ion-button>
+  </section>
 </ion-content>
+

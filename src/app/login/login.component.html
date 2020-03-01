@@ -1,0 +1,42 @@
+<!-- <ion-content>
+  <div class="fullscreen">
+    <img src="./assets/img/icon.png" alt="" class="logo">
+    <div class="body">
+      <h4>WELCOME</h4>
+      <label class="subtitle">Sign in to access your account</label>
+    </div>
+    <div class="footer">
+      <ion-button (click)="authService.loginWithGoogle()" class="btn" color="tertiary" >
+        <ion-item>
+          <i class="fab fa-google-plus-g" slot="start"></i>
+          <ion-label>Sign in with Google</ion-label>
+        </ion-item>
+      </ion-button>      
+    </div>
+  </div>
+</ion-content> -->
+
+<ion-content>
+  <div class="fullscreen">
+    <img src="./assets/img/smartkit.png" alt="" class="logo">
+    <ion-card>
+      <ion-card-content>
+        <ion-input placeholder="Correo Electronico"><i class="fa fa-envelope" aria-hidden="true"></i></ion-input>
+        <ion-input placeholder="Contraseña"><i class="fa fa-key" aria-hidden="true"></i></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button>
+      Login
+    </ion-button>
+
+    <div class="footer">
+      <ion-button (click)="authService.loginWithGoogle()" class="btn" color="tertiary" >
+        <ion-item>
+          <i class="fab fa-google-plus-g" slot="start"></i>
+          <ion-label>Sign in with Google</ion-label>
+        </ion-item>
+      </ion-button>      
+    </div>
+  </div>
+</ion-content>

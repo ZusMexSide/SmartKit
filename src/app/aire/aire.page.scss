@@ -109,7 +109,7 @@
     -webkit-font-smoothing: antialiased;
   }
   .gauge-center::after {
-    content: 'BUENA';
+    content: 'Mala';
     width: 100%;
     float: left;
     opacitY: .6;
@@ -200,3 +200,8 @@
     }
   }
   
+
+  .chart{
+    height: 300px;
+    width: 100%;
+  }

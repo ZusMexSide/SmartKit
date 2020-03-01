@@ -1,0 +1,109 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cocina</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list>
+      <ion-fab-button color="light">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab> <!--Boton para añadir Sensores-->
+
+  <!-- <ion-card>
+    <ion-card-content routerLink="/rooms">
+      <img class="img1" src="assets\img\sensor.png">
+      <h4 class="ion-text-center">No hay sensores Añadidos</h4>
+    </ion-card-content>
+  </ion-card> -->
+  <!--Card con contenido si no hay Sensores añadidos-->
+
+  <ion-card class="card1" routerLink="/temperatura">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
+                <ion-fab-button color="danger">
+                  <ion-icon name="thermometer"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+              <img class="img2" src="https://image.flaticon.com/icons/svg/1684/1684374.svg">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h4 class="ion-text-center text">Temperatura & Humedad</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/aire">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
+                <ion-fab-button color="danger">
+                  <ion-icon name="thermometer"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+              <img class="img2" src="https://image.flaticon.com/icons/svg/1458/1458984.svg">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h4 class="ion-text-center text1">Calidad del Aire</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/alert">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
+                <ion-fab-button color="danger">
+                  <ion-icon name="thermometer"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+              <img class="img2" src="https://image.flaticon.com/icons/svg/427/427735.svg">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h4 class="ion-text-center text2">Alarma de Sismo y Movimiento</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -5,10 +5,15 @@
 }
 
 .background{
-    //--ion-background-color: linear-gradient(to bottom, #36D1DC 35%, #5B86E5 100%);
-    //--background: url(https://i.imgur.com/Tz7DTEV.jpg);
-    --ion-background-color: rgb(255, 255, 255);
+    // --ion-background-color: linear-gradient(to bottom, #36D1DC 10%, #5B86E5 10%);
+    --background: url('src/assets/img/img2.jpg')0 0/100% 100% no-repeat;
+    // --ion-background-color: #000000;
     font-family: sans-serif;
+    // --ion-background-color: linear-gradient(130deg, #509fc9, #e83b59);
+    // opacity: 0.7;
+    // --background-position: center;
+    // --background-size: -5px;
+    // --background-repeat: no-repeat;
 }
 
 .img-card{

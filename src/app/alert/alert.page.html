@@ -8,20 +8,20 @@
 </ion-header>
 
 <ion-content>
-  <br><br>
-    <img class="img2" src="assets\img\house.png">
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="presentModal('sismos')">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <h3>SISMOS</h3>
+  <img class="img2" src="assets\img\house.png">
   <br><br>
   
-  <ion-item>
-    <ion-label class="font">Alerta de Sismo</ion-label>
-    <ion-toggle (click)="openToast()" slot="start" name="apple" color="secondary" checked></ion-toggle>
+  <ion-item *ngFor="let s of sismos">
+    <ion-label class="font">{{s.room}}</ion-label>
+    <ion-toggle (ionChange)="openToast($event,s.id,'sismos')" slot="start" color="secondary" checked="{{s.valor}}"></ion-toggle>
   </ion-item>
-  <br>
-  <ion-item>
-    <ion-label class="font">Sistema de Seguridad</ion-label>
-    <ion-toggle (click)="openToast()" slot="start" name="apple" color="secondary" checked></ion-toggle>
-  </ion-item>
-
+  
   <br><br><br><br>
 
   <ion-card class="style">
@@ -29,8 +29,22 @@
       <ion-card-title>Importante!</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      El sistema de alarma encendera y apagara luces al detectar un sismo o a algun extraño muy cerca del hogar 
+      El sistema de alarma encendera y apagara luces al detectar un sismo o a algun extraño muy cerca del hogar
     </ion-card-content>
   </ion-card>
 
+</ion-content>
+<ion-content>   
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="presentModal('movimiento')">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <h3>
+    MOVIMIENTO
+  </h3>
+  <ion-item *ngFor="let m of movimientos">
+    <ion-label class="font">{{m.room}}</ion-label>
+    <ion-toggle (ionChange)="openToast($event,m.id,'movimiento')" slot="start" name="apple" color="secondary" checked="{{m.valor}}"></ion-toggle>
+  </ion-item>
 </ion-content>

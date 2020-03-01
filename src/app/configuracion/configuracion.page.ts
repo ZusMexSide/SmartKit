@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-configuracion',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracionPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService,private iotFirebase:FirebaseService) { }
 
   ngOnInit() {
   }
+  
+  
 
 }
