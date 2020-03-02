@@ -33,7 +33,8 @@ const routes: Routes = [
   {
     path: 'slideshow',
     loadChildren: () => import('./slideshow/slideshow.module').then( m => m.SlideshowPageModule)
-  },  {
+  },
+  {
     path: 'rooms',
     loadChildren: () => import('./rooms/rooms.module').then( m => m.RoomsPageModule)
   },
