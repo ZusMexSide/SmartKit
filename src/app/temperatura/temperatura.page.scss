@@ -6,7 +6,7 @@
 
 .background{
     // --ion-background-color: linear-gradient(to bottom, #36D1DC 10%, #5B86E5 10%);
-    --background: url('src/assets/img/img2.jpg')0 0/100% 100% no-repeat;
+    // --background: url('src/assets/img/img2.jpg')0 0/100% 100% no-repeat;
     // --ion-background-color: #000000;
     font-family: sans-serif;
     // --ion-background-color: linear-gradient(130deg, #509fc9, #e83b59);
@@ -18,7 +18,7 @@
 
 .img-card{
     display: block;
-    width: 10px;
+    width: 150px;
     margin: 0 auto; 
 }
 
@@ -32,7 +32,7 @@
 
 .ion-text-2{
     color: #000000;
-    font-size: 80px;
+    font-size: 55px;
     text-align: center;
 }
 
@@ -45,6 +45,17 @@
 .ion-text-h{
     color: #000000;
     margin-top: 0px;
-    font-size: 20;
+    font-size: 20px;
     text-align: center;
+}
+
+ion-card{
+    // --background: #2cbaf2;
+    --background: #ffeb87;
+    border-radius: 30px;
+}
+
+.card2{
+    --background: #ffffff;
+    border-radius: 5px;
 }

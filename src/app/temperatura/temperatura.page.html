@@ -8,38 +8,72 @@
 </ion-header>
 
 <ion-content padding class="background">
-  <br><br><br><br>
-  <!-- <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+  
+  <ion-card class="card2">
+    <ion-card-content>
+      <div>
+        <ion-list>
+          <ion-item *ngFor="let d of data">
+            <ion-title>{{d.room}}</ion-title>
+            <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle>
+            <ion-button slot="end" size="small" (click)="cargarDatos(d.id)">Ver Info</ion-button>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
     <ion-fab-button (click)="presentModal()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <div>
+  <!-- <div>
     <ion-list>
       <ion-item *ngFor="let d of data">
-        <ion-title>{{d.room}}</ion-title> -->
-        <!-- <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle> -->
-        <!-- <ion-button slot="end" size="small" (click)="cargarDatos(d.id)">View</ion-button>
+        <ion-title>{{d.room}}</ion-title>
+        <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle>
+        <ion-button slot="end" size="small" (click)="cargarDatos(d.id)">View</ion-button>
       </ion-item>
     </ion-list>
   </div> -->
 
 
 <!-- </ion-content>
-
 <ion-content> -->
-  <div class="container">
-    <div class="row" >
-      <h3 class="ion-text-center">TODAY</h3>
-      
-      <p class="ion-text-center">{{myDate | date: 'dd/MM/yyyy'}}</p>
-      <!-- <ion-datetime class="ion-text-center" displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate"></ion-datetime> -->
-      <h1 class="ion-text-2">{{temp}}°C</h1>
-      <h3 class="ion-text-h">Humedad:{{hum}} %</h3>
-    </div>
-  </div>
-  <br><br><br>
 
+  
+  
+  <ion-footer>
+    <ion-card>
+      <ion-card-content>
+        <h3 class="ion-text-center">TODAY</h3>
+                    <p class="ion-text-center">{{myDate | date: 'dd/MM/yyyy'}}</p>
+        <div class="container">
+          <div class="row" >
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <div>
+                    <!-- <ion-datetime class="ion-text-center" displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate"></ion-datetime> -->
+                    <h1 class="ion-text-2">{{temp}}°C</h1>
+                    <h3 class="ion-text-h ion-padding-horizontal">Humedad: {{hum}} %</h3>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <div>
+                    <!-- <img class="img-card" src="https://image.flaticon.com/icons/svg/642/642012.svg"> -->
+                    <img class="img-card" src="https://image.flaticon.com/icons/svg/789/789395.svg">
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-footer>
   <!-- <div class="container">
     <div class="row">
       <h5>Temperatura</h5>
