@@ -19,20 +19,21 @@
 <ion-content class="background">
   <div class="fullscreen">
     <img src="./assets/img/smartkit.png" alt="" class="logo">
-    <ion-card>
-      <ion-card-content>
-        <br>
-        <ion-input placeholder="Correo Electronico"><i class="fa fa-envelope" aria-hidden="true"></i></ion-input>
-        <ion-input placeholder="Contraseña"><i class="fa fa-key" aria-hidden="true"></i></ion-input>
-        <br>
-      </ion-card-content>
+      <form action="" (submit)="login()">
+        <ion-card>
+        <ion-card-content>
+          <br>
+          <ion-input placeholder="Correo Electronico" id="emailyyyyyy" name="email" [(ngModel)]="email"><i class="fa fa-envelope" aria-hidden="true"></i></ion-input>
+          <ion-input placeholder="Contraseña" id="password" name="password" [(ngModel)]="password"><i class="fa fa-key" aria-hidden="true"></i></ion-input>
+          <br>
+        </ion-card-content>
     </ion-card>
 
-    <ion-button class="btn">
-      Entrar
-    </ion-button>
+    <ion-button class="btn" type="submit">Entrar</ion-button>
 
     <br>
+    </form>
+
     <h2 class="ion-text-center">Or Use</h2>
 
 
@@ -58,7 +59,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    
+
     <ion-footer no-border>
       <br>
       <h4 routerLink="/registro" class="ion-text-center">No tienes una cuenta? <span>Registrate</span></h4>

@@ -15,7 +15,7 @@
         <ion-list>
           <ion-item *ngFor="let d of data">
             <ion-title>{{d.room}}</ion-title>
-            <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle>
+            <!-- <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle> -->
             <ion-button slot="end" size="small" (click)="cargarDatos(d.id)">Ver Info</ion-button>
           </ion-item>
         </ion-list>
@@ -42,20 +42,6 @@
 
 <!-- </ion-content>
 <ion-content> -->
-<<<<<<< HEAD
-=======
-  <div class="container">
-    <div class="row" >
-      <h3 class="ion-text-center">TODAY</h3>
-      
-      <p class="ion-text-center">{{myDate | date: 'dd/MM/yyyy'}}</p>
-      <!-- <ion-datetime class="ion-text-center" displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate"></ion-datetime> -->
-      <h1 class="ion-text-2">{{temp}}°C</h1>
-      <h3 class="ion-text-h">Humedad: {{hum}}%</h3>
-    </div>
-  </div>
-  <br><br><br>
->>>>>>> 9196b418e3d158017e3db3fd486755f9ccf34107
 
   
   

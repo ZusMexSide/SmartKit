@@ -16,7 +16,7 @@
   <ion-card class="card1">
     <ion-card-content>
       <ion-grid>
-        <ion-row>
+        <ion-row  *ngFor="let s of sismos">
           <ion-col class="imgSismo">
             <div>
               <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
@@ -24,22 +24,24 @@
                   <ion-icon name="thermometer"></ion-icon>
                 </ion-fab-button>
               </ion-fab> -->
+              <h3 >{{s.room}}</h3>
               <img class="img2" src="https://image.flaticon.com/icons/svg/1684/1684394.svg">
+              
             </div>
           </ion-col>
           <ion-col>
             <div class="contentSismo">
-              <div *ngIf="sismo!=true">
+              <div *ngIf="s.valor!=true">
                 <h5>Desactivado</h5>
               </div>
-              <div *ngIf="sismo!=false">
+              <div *ngIf="s.valor!=false">
                 <h5>Activado</h5>
               </div>
-              <ion-toggle [(ngModel)]="sismo"></ion-toggle>
-              <div *ngIf="sismo!=true">
+              <ion-toggle  checked="{{s.valor}}" (ionChange)="openToast($event,s.id,'sismos')"></ion-toggle>
+              <div *ngIf="s.valor!=true">
                 <h6>Sismo no detectado</h6>
               </div>
-              <div *ngIf="sismo!=false">
+              <div *ngIf="s.valor!=false">
                 <h6>Sismo detectado</h6>
               </div>
             </div>

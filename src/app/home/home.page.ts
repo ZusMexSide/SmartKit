@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-username:any;
-user:any;
+  username: any;
+  user: any;
   constructor() {
     this.user = localStorage.getItem('user');
     this.username = JSON.parse(this.user).displayName;

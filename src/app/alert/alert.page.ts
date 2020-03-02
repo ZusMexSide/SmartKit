@@ -16,11 +16,10 @@ export class AlertPage implements OnInit {
     this.iotFirebase.getSeismograph().subscribe((res)=>{
       this.sismos=res;
     })
-    this.iotFirebase.getMovement().subscribe((res)=>{
-      this.movimientos=res;
-    })
+    
     this.sismo=false
   }
+  
 
   updateStatus(e:any,id:any,servicio:any){
     var mens:any;

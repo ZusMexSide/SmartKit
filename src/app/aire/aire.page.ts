@@ -39,9 +39,9 @@ export class AirePage {
     async presentModal() {
       const modal = await this.modalController.create({
         component: ModalPageComponent,
-        // componentProps:{
-        //     servicio: "calidadAire"
-        // }
+        componentProps:{
+            servicio: "calidadAire"
+        }
       });
       return await modal.present();
     }

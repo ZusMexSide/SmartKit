@@ -9,14 +9,17 @@ import { FirebaseService } from '../firebase.service';
 })
 export class ModalPageComponent implements OnInit {
   @Input() servicio;
-  sku:any;
-  room:any;
-  constructor(private modalCtrl: ModalController,private iotFirebase : FirebaseService) {
-    console.log(this.servicio);
+  sku: any;
+  room: any;
+  serv: any;
+  constructor(private modalCtrl: ModalController, private iotFirebase: FirebaseService) {
+    this.datos();
   }
 
   ngOnInit() { }
-
+  async datos(){
+    await this.serv === this.servicio
+  }
   dismiss() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
@@ -24,12 +27,12 @@ export class ModalPageComponent implements OnInit {
       'dismissed': true
     });
   }
-  service(){
-    console.log(this.servicio,this.sku,this.room);
-    if (this.servicio==="calidadAire" || this.servicio==="temp-hum") {
-      this.iotFirebase.insertServiceNumericos(this.servicio,this.sku,this.room);
-    }else{
-      this.iotFirebase.insertServiciosBooleanos(this.servicio,this.sku,this.room);
+  service() {
+    console.log(this.servicio, this.sku, this.room);
+    if (this.servicio === "calidadAire" || this.servicio === "temp-hum") {
+      this.iotFirebase.insertServiceNumericos(this.servicio, this.sku, this.room);
+    } else {
+      this.iotFirebase.insertServiciosBooleanos(this.servicio, this.sku, this.room);
     }
     this.dismiss();
   }

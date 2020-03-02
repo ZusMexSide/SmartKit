@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
 import { Chart } from 'chart.js';
 import { FirebaseService } from '../firebase.service';
 import { Subscription } from 'rxjs';
@@ -11,6 +11,7 @@ import { ModalPageComponent } from '../modal-page/modal-page.component';
   styleUrls: ['./temperatura.page.scss'],
 })
 export class TemperaturaPage {
+  @Input() servicio: string;
   @ViewChild('chartTemp', { static: false }) chartTemp;
   bars: any;
   colorArray: any;
