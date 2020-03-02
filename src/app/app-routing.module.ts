@@ -46,14 +46,13 @@ const routes: Routes = [
     path: 'movimiento',
     loadChildren: () => import('./movimiento/movimiento.module').then( m => m.MovimientoPageModule)
   },
-
-
+  { path: 'modal', component: ModalPageComponent }
 ];
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
-})
+  @NgModule({
+    imports: [
+      RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    ],
+    exports: [RouterModule]
+  })
 export class AppRoutingModule { }

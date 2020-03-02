@@ -9,7 +9,7 @@
 
 <ion-content class="background">
 
-  <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+  <!-- <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
     <ion-fab-button color="secondary">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
@@ -26,14 +26,14 @@
     </ion-fab-list>
   </ion-fab> <!--Boton flotante de para agregar cuartos-->
 
-  <br>
+  <!-- <br>
   
   <ion-card>
     <ion-card-content routerLink="/rooms">
       <img class="img1" src="assets\img\sofa.png">
       <h4 class="text2 ion-text-center">No hay Habitaciones Añadidas</h4>
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
   <!--Card con contenido si no hay Sensores añadidos-->
 
 <!-- <ion-text>
@@ -59,7 +59,7 @@
   </ion-card-content>
 </ion-card> -->
 
-<ion-card>
+<!-- <ion-card>
   <ion-card-content routerLink="/rooms">
     <ion-grid>
       <ion-row>
@@ -95,7 +95,7 @@
       </ion-row>
     </ion-grid>
   </ion-card-content>
-</ion-card>
+</ion-card> -->
 
   <!-- <div class="container">
     <div class="row">
@@ -105,53 +105,106 @@
     </div>
   </div> --> <!--Imagen de Inicio en Home-->
 
-  <!-- <ion-grid>
-    <ion-row>
-      <ion-col offset-4>
-        <ion-card routerLink="/temperatura" class="welcome-card" type="button">
-          <br>
-          <img class="img-card" src="https://image.flaticon.com/icons/svg/1684/1684374.svg" alt="" />
-          <ion-card-header>
-            <ion-card-title class="ion-text-center">Temperatura y Humedad</ion-card-title>
-          </ion-card-header>
-          <br>
-        </ion-card>
-      </ion-col>
-      <ion-col offset-4>
-        <ion-card routerLink="/aire" class="welcome-card" type="button">
-          <br>
-          <img class="img-card" src="https://image.flaticon.com/icons/svg/1458/1458984.svg" alt="" />
-          <ion-card-header>
-            <ion-card-title class="ion-text-center">Calidad del Aire</ion-card-title>
-            <br>
-          </ion-card-header>
-          <br>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col offset-4>
-        <ion-card routerLink="/alert" class="welcome-card" type="button">
-          <br>
-          <img class="img-card" src="https://image.flaticon.com/icons/svg/427/427735.svg" alt="" />
-          <ion-card-header>
-            <ion-card-title class="ion-text-center">Sistem Alert & Seguridad</ion-card-title>
-          </ion-card-header>
-          <br>
-        </ion-card>
-      </ion-col>
-      <ion-col offset-4>
-        <ion-card routerLink="/configuracion" class="welcome-card" type="button">
-          <br>
-          <img class="img-card" src="https://image.flaticon.com/icons/svg/443/443150.svg" alt="" />
-          <ion-card-header>
-            <ion-card-title class="ion-text-center">Configuracion</ion-card-title>
-            <br>
-          </ion-card-header>
-          <br>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
+  <ion-card class="card1" routerLink="/temperatura">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
+                <ion-fab-button color="danger">
+                  <ion-icon name="thermometer"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+              <img class="img2" src="https://image.flaticon.com/icons/svg/1684/1684374.svg">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h4 class="ion-text-center text">Temperatura & Humedad</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/aire">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
+                <ion-fab-button color="danger">
+                  <ion-icon name="thermometer"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+              <img class="img2" src="https://image.flaticon.com/icons/svg/1458/1458984.svg">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h4 class="ion-text-center text1">Calidad del Aire</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/alert">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
+                <ion-fab-button color="danger">
+                  <ion-icon name="thermometer"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+              <img class="img2" src="https://image.flaticon.com/icons/svg/427/427735.svg">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h4 class="ion-text-center text2">Alarma de Sismo y Movimiento</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/movimiento">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
+                <ion-fab-button color="danger">
+                  <ion-icon name="thermometer"></ion-icon>
+                </ion-fab-button>
+              </ion-fab> -->
+              <img class="img2" src="https://image.flaticon.com/icons/svg/2622/2622632.svg">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <h4 class="ion-text-center text2">Alarma de Movimiento</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab routerLink="/configuracion" horizontal="start" vertical="bottom" slot="fixed">
+    <ion-fab-button color="dark">
+      <i class="fa fa-cogs fa-2x" aria-hidden="true"></i>
+    </ion-fab-button>
+  </ion-fab>
   
 </ion-content>
