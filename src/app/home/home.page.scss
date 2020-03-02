@@ -1,80 +1,37 @@
-.img-card{
-    display: block;
-    width: 40px;
-    margin: 0 auto;
-  }
-  
-  .test1{
-    --background: #000000;
-  }
-  
-  .ion-text-center{
-    font-family: sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    
-  }
-
-  .Bu{
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 25px;
-      font-weight: normal;
-  }
-
-.ion-text-justify{
-  font-family: Arial;
-  color: #c7c7c7;
-  font-size: 13px;
-  padding: 0 30px;
-}
-
-h3{
-  font-family: Arial;
-  color: #141414;
-  font-size: 20px;
-  padding: 80px 0px 0px 30px;
-}
-
-h4{
-  font-family: Arial;
-  color: #141414;
-  font-size: 16.5px;
-}
-
-.fa{
-  color: #141414;
-  padding: 0 0 0 200px;
-}
-
-// .header{
-//   --ion-statusbar-padding: #141414;
-// }
-
-// .head{
-//   // --ion-background-color: #ff0000;
-//   --background: url('src/assets/img/img2.jpg')0 0/100% 100% no-repeat;
-//   padding-block-end: 100px;
-// }
-
-// .text{
-//   padding: 40px 0 0 25px;
-//   color: #ffffff;
-//   font-family: Arial;
-//   font-size: 20px;
-// }
-
-.logo{
-  display: block;
-  width: 200px;
-  margin: 0 auto;
-}
-
 .img1{
   display: block;
   width: 80px;
   margin: 0 auto;
 }
 
+.text{
+  font-family: Arial;
+  padding: 5px 0 0 0;
+  color: #000000;
+}
+
+.text1{
+  font-family: Arial;
+  padding: 18px 0 0 0;
+  color: #000000;
+}
+
 .text2{
   font-family: Arial;
+  padding: 10px 0 0 0;
+  color: #000000;
+}
+
+// ion-card{
+//     // margin: 50px;
+//     margin-block-start: 110px;
+//     //Espaciado en el Ion-Header
+// }
+
+.img2{
+  width: 50px;
+}
+
+.card1{
+  margin-block-start: 20px;
 }

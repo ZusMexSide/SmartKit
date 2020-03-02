@@ -11,6 +11,7 @@ import { FirebaseService } from '../firebase.service';
 export class AlertPage implements OnInit {
   sismos:any;
   movimientos:any;
+  sismo: boolean;
   constructor(public toastController: ToastController, private modalController :  ModalController , private iotFirebase:FirebaseService) {
     this.iotFirebase.getSeismograph().subscribe((res)=>{
       this.sismos=res;
@@ -18,6 +19,7 @@ export class AlertPage implements OnInit {
     this.iotFirebase.getMovement().subscribe((res)=>{
       this.movimientos=res;
     })
+    this.sismo=false
   }
 
   updateStatus(e:any,id:any,servicio:any){

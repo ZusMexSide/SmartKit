@@ -24,24 +24,18 @@
                   <ion-icon name="thermometer"></ion-icon>
                 </ion-fab-button>
               </ion-fab> -->
-              <img class="img2" src="https://image.flaticon.com/icons/svg/1684/1684394.svg">
+              <img class="img2" src="https://image.flaticon.com/icons/svg/394/394606.svg">
             </div>
           </ion-col>
           <ion-col>
-            <div class="contentSismo">
-              <div *ngIf="sismo!=true">
+            <div class="contentMovimiento">
+              <div *ngIf="movimiento!=true">
                 <h5>Desactivado</h5>
               </div>
-              <div *ngIf="sismo!=false">
+              <div *ngIf="movimiento!=false">
                 <h5>Activado</h5>
               </div>
-              <ion-toggle [(ngModel)]="sismo"></ion-toggle>
-              <div *ngIf="sismo!=true">
-                <h6>Sismo no detectado</h6>
-              </div>
-              <div *ngIf="sismo!=false">
-                <h6>Sismo detectado</h6>
-              </div>
+              <ion-toggle [(ngModel)]="movimiento"></ion-toggle>
             </div>
           </ion-col>
         </ion-row>

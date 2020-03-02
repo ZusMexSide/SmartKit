@@ -9,21 +9,18 @@
 
 <ion-content class="background">
 
-      <ion-avatar class="ion-margin-center">
-        <img src="https://avatars0.githubusercontent.com/u/46512012?s=460&v=4">
-      </ion-avatar>
-  <!-- <ion-list>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img class="img2" src="https://i.pinimg.com/564x/5b/a7/a1/5ba7a1c9d1200a43a4bd9c76bb76568a.jpg">
-      </ion-avatar>
-      <ion-label>
-        <h2>Roberto Rojas</h2>
-        <h3>robert15.R@gmail.com</h3>
-      </ion-label>
-    </ion-item>
-  </ion-list> -->
-  <br>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="https://avatars0.githubusercontent.com/u/46512012?s=460&v=4">
+    </ion-avatar>
+    <ion-label>
+      <h2>Casa de</h2>
+      <h3>Jesus Castro</h3>
+      <p>4 Sensores conectados</p>
+    </ion-label>
+  </ion-item>
+
+  <br><br>
 
   <ion-item>
     <ion-label>Notificaciones en el Dispositivo</ion-label>
@@ -34,14 +31,22 @@
     <ion-toggle name="blueberry" checked></ion-toggle>
   </ion-item>
 
-  <section >
-    <ion-button expand="block" color="danger" (click)="authService.logOutFirebase()">LOG OUT</ion-button>
-  </section>
+  <ion-row>
+    <ion-col>
+      <div></div>
+    </ion-col>
+    <ion-col>
+      <div><ion-button color="secondary" (click)="authService.logOutFirebase()">Salir <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></ion-button></div>
+    </ion-col>
+    <ion-col>
+      <div></div>
+    </ion-col>
+  </ion-row>
+
+  
   
   <ion-footer no-border>
-    <br>
-    <h3 class="ion-text-center">from</h3>
-    <h1 class="ion-text-center difT">IoTechnology</h1>
+    <img class="img1" src="assets\img\iot.png">
   </ion-footer>
 </ion-content>
 
