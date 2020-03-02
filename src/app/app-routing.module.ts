@@ -50,6 +50,12 @@ const routes: Routes = [
 
 ];
 
+<<<<<<< Updated upstream
+=======
+
+];
+
+>>>>>>> Stashed changes
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
