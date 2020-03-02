@@ -33,7 +33,8 @@ const routes: Routes = [
   {
     path: 'slideshow',
     loadChildren: () => import('./slideshow/slideshow.module').then( m => m.SlideshowPageModule)
-  },  {
+  },
+  {
     path: 'rooms',
     loadChildren: () => import('./rooms/rooms.module').then( m => m.RoomsPageModule)
   },
@@ -45,14 +46,13 @@ const routes: Routes = [
     path: 'movimiento',
     loadChildren: () => import('./movimiento/movimiento.module').then( m => m.MovimientoPageModule)
   },
-
-
+  { path: 'modal', component: ModalPageComponent }
 ];
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
-})
+  @NgModule({
+    imports: [
+      RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    ],
+    exports: [RouterModule]
+  })
 export class AppRoutingModule { }
