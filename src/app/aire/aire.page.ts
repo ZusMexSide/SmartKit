@@ -93,7 +93,7 @@ export class AirePage {
             bindto: '#chart_gauge',
             data: {
                 columns: [
-                    ["data", dato]
+                    ['Calidad', dato]
                 ],
                 type: 'gauge',
                 onclick: function (d, i) { console.log("onclick", d, i); },

@@ -2,40 +2,25 @@
 
   <div class="fullscreen">
     <img src="./assets/img/smartkit.png" alt="" class="logo">
-    <ion-card>
-      <ion-card-content>
-        <br>
-        <ion-input placeholder="Correo Electronico"><i class="fa fa-envelope" aria-hidden="true"></i></ion-input>
-        <ion-input placeholder="Contraseña"><i class="fa fa-key" aria-hidden="true"></i></ion-input>
-        <br>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-button class="btn">
-      Regístrame
-    </ion-button>
+    <form action="" (submit)="onAddUser()">
+      <ion-card>
+        <ion-card-content>
+          <br>
+          <ion-input placeholder="Correo Electronico"  id="email" name="email" [(ngModel)]="email"><i class="fa fa-envelope" aria-hidden="true"></i></ion-input>
+          <ion-input placeholder="Contraseña" type="password" id="password" name="password" [(ngModel)]="password"><i class="fa fa-key" aria-hidden="true"></i></ion-input>
+          <br>
+        </ion-card-content>
+      </ion-card>
+  
+      <ion-button class="btn" type="submit">
+        Regístrame
+      </ion-button>
+    </form>
+    
 
     <br>
-    <h2 class="ion-text-center">Ó registrate con:</h2>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <div>
-            <ion-fab-button class="btnAling">
-              <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
-            </ion-fab-button>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div>
-            <ion-fab-button color="danger" (click)="authService.loginWithGoogle()">
-              <i class="fa fa-google fa-2x" aria-hidden="true"></i>
-            </ion-fab-button>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+
     
     <ion-footer no-border>
       <br>
