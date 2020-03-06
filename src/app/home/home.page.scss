@@ -38,8 +38,11 @@
 }
 
 .head{
-  --background: url('src/assets/img/img2.jpg')0 0/100% 100% no-repeat;
-  padding-block-end: 150px;
+  --background: url('https://cdn.dribbble.com/users/1803663/screenshots/5665285/home_2x.png')0 0/100% 100% no-repeat;
+  --background-size: cover;
+  padding-block-end: 100px;
+  height: 30vh;
+  border-radius: 0 0 30px 30px;
 }
 
 .text{
@@ -48,4 +51,15 @@
   font-family: Arial;
   color: #ffffff;
   text-align: center;
+}
+
+ion-card{
+  border-radius: 0px;
+}
+
+p{
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #ffffff;
 }

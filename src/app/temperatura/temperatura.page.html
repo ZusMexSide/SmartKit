@@ -14,9 +14,9 @@
       <div>
         <ion-list>
           <ion-item *ngFor="let d of data">
-            <ion-title>{{d.room}}</ion-title>
+            <h3>{{d.room}}</h3>
             <!-- <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle> -->
-            <ion-button slot="end" size="small" (click)="cargarDatos(d.id)">Ver Info</ion-button>
+            <ion-button slot="end" size="small" (click)="cargarDatos(d.id)">Ver Más</ion-button>
           </ion-item>
         </ion-list>
       </div>
