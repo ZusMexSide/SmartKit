@@ -56,14 +56,14 @@
       <ion-row>
         <ion-col>
           <div>
-            <ion-fab-button class="btnAling">
+            <ion-fab-button class="izq">
               <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
             </ion-fab-button>
           </div>
         </ion-col>
         <ion-col>
           <div>
-            <ion-fab-button color="danger" (click)="authService.loginWithGoogle()">
+            <ion-fab-button class="der" color="danger" (click)="authService.loginWithGoogle()">
               <i class="fa fa-google fa-2x" aria-hidden="true"></i>
             </ion-fab-button>
           </div>
@@ -73,7 +73,7 @@
 
     <ion-footer no-border>
       <br>
-      <h4 routerLink="/registro" class="ion-text-center">No tienes una cuenta? <span>Registrate</span></h4>
+      <h4 routerLink="/registro" class="ion-text-center">No tienes una cuenta? <span class="ion-text-center">Registrate</span></h4>
     </ion-footer>
 
     <!-- <div class="footer">

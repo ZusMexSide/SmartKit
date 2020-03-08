@@ -45,10 +45,12 @@ ion-card{
     --border-radius: 50px;
     --background: #445edb;
     font-family: Arial;
-    margin-left: 80px;
-    margin-right: 80px;
+    // margin-left: 80px;
+    // margin-right: 80px;
     height: 50px;
     width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h4{
@@ -73,29 +75,17 @@ h2{
     --border-radius: 100px;
 }
 
-.btnAling{
-    margin-left: 100px;
+.izq{
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
 }
 
-// .body{
-//     margin: 25%;
-// }
-// .subtitle{
-//     font-weight: 100;
-//     color: rgb(0, 0, 0);
-//     font-size: smaller;
-// }
-// .footer{
-//     margin-top: 40%;
-//     padding-bottom: 10%;
-// }
-// .btn{
-//     margin: 30px;
-//     height: 35px;
-//     border-radius: 15px;
-// }
-// a{
-//     text-decoration: none;
-//     color: white;
-//     font-size: large;
-// }
+.der{
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+}
+
+
+
