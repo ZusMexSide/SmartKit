@@ -1,29 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { AuthService } from './auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  user: any;
-  service: any;
-  uid: any;
-  email: any;
-  constructor(private houseIoT: AngularFireDatabase) {
-    // obtiene los datos del usuario entrando al storage
-    this.user = localStorage.getItem('user');
-    this.uid = JSON.parse(this.user).uid;
-    this.email = JSON.parse(this.user).email;
-  }
+  constructor(private houseIoT: AngularFireDatabase,
+              private auth: AuthService) {}
 
-  // musestra la lista de los servicios
-  listData() {
-    return this.houseIoT.list(`smartKit/servicios/${this.service}`).valueChanges();
-  }
   // regresa los datos del usuario
   getUsers(uid: any) {
-    return this.houseIoT.object(`smartKit/usuarios/${uid}`).valueChanges();
+    return this.houseIoT.object(`smartKit/usuarios/${this.auth.user.uid}`).valueChanges();
   }
   // consulta la lista de los servicios
   getListService(servicio: any) {
@@ -39,7 +29,7 @@ export class FirebaseService {
   }
   // inserta nuevo cliente con la clave del kit vendido
   insertKit( servicio: any) {
-    this.houseIoT.object(`smartKit/usuarios/${this.uid}`).update({ id: this.uid, correo: this.email, servicio });
+    this.houseIoT.object(`smartKit/usuarios/${this.auth.user.uid}`).update({ id: this.auth.user.uid, correo: this.auth.user.email, servicio });
   }
   // obtiene la temperatura del servicio buscado
   getTemperature(servicio: any) {
@@ -62,7 +52,7 @@ export class FirebaseService {
   }
   // obtiene el servicio que tiene el usuario para realizar match
   getServices() {
-    return this.houseIoT.object(`smartKit/usuarios/${this.uid}/servicio`).valueChanges();
+    return this.houseIoT.object(`smartKit/usuarios/${this.auth.user.uid}/servicio`).valueChanges();
   }
 
 

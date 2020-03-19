@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { ModalPageComponent } from './modal-page/modal-page.component';
+import { GuardiaGuard } from './guardia.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) },
+  { 
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  { 
+    path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
   {
-    path: 'login', component: LoginComponent
+    path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'temperatura',

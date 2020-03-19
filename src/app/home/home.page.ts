@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { ModalController } from '@ionic/angular';
 import { ModalPageComponent } from '../modal-page/modal-page.component';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +14,13 @@ export class HomePage {
   username: any;
   user: any;
   uid: any;
-  constructor(private iotFirebase: FirebaseService, private modalController: ModalController) {
-    this.user = localStorage.getItem('user');
-    this.username = JSON.parse(this.user).email;
-    this.uid = JSON.parse(this.user).uid;
+  constructor(private iotFirebase: FirebaseService, private modalController: ModalController,
+              private auth: AuthService) {
+  }
+  ionViewDidEnter() {
+    this.user = this.auth.user;
+    this.username = this.user.email;
+    this.uid = this.user.uid;
     this.verificar();
   }
   // se verifica si el usuario tiene un servicio

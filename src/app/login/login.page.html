@@ -1,0 +1,91 @@
+<!-- <ion-content>
+  <div class="fullscreen">
+    <img src="./assets/img/icon.png" alt="" class="logo">
+    <div class="body">
+      <h4>WELCOME</h4>
+      <label class="subtitle">Sign in to access your account</label>
+    </div>
+    <div class="footer">
+      <ion-button (click)="authService.loginWithGoogle()" class="btn" color="tertiary" >
+        <ion-item>
+          <i class="fab fa-google-plus-g" slot="start"></i>
+          <ion-label>Sign in with Google</ion-label>
+        </ion-item>
+      </ion-button>      
+    </div>
+  </div>
+</ion-content> -->
+
+<ion-content class="background">
+    <div class="fullscreen">
+      <img src="./assets/img/smartkit.png" alt="" class="logo">
+      <form action="" (submit)="login()">
+        <ion-card>
+          <ion-card-content>
+            <br>
+            <ion-input placeholder="Correo Electronico" id="emailyyyyyy" name="email" [(ngModel)]="email"><i
+                class="fa fa-envelope" aria-hidden="true"></i></ion-input>
+            <ion-input placeholder="Contraseña" id="password" name="password" [(ngModel)]="password"><i class="fa fa-key"
+                aria-hidden="true"></i></ion-input>
+            <br>
+          </ion-card-content>
+        </ion-card>
+  
+        <ion-row>
+          <ion-col>
+            <div></div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <ion-button class="btn" type="submit">Entrar</ion-button>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </form>
+  
+      <h2 class="ion-text-center">Or Use</h2>
+  
+  
+      <!-- <ion-fab-button>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </ion-fab-button> -->
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+              <ion-fab-button class="izq" (click)="this.authService.facebook()">
+                <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+              </ion-fab-button>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <ion-fab-button class="der" color="danger" >
+                <i class="fa fa-google fa-2x" aria-hidden="true"></i>
+              </ion-fab-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+      <ion-footer no-border>
+        <br>
+        <h4 routerLink="/registro" class="ion-text-center">No tienes una cuenta? <span
+            class="ion-text-center">Registrate</span></h4>
+      </ion-footer>
+  
+      <!-- <div class="footer">
+        <ion-button (click)="authService.loginWithGoogle()" class="btn" color="tertiary" >
+          <ion-item>
+            <i class="fab fa-google-plus-g" slot="start"></i>
+            <ion-label>Sign in with Google</ion-label>
+          </ion-item>
+        </ion-button>      
+      </div> -->
+    </div>
+  </ion-content>
