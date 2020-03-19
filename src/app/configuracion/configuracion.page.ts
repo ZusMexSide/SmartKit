@@ -20,6 +20,10 @@ export class ConfiguracionPage implements OnInit {
     private storage: NativeStorage) {
     this.storage.getItem('user').then((res) => {
       console.log(res);
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 6c1846a67684f6a44569d611e6a8528139aeefbf
       this.username = res.displayName;
       this.email = res.email;
       this.photo = res.picture;
