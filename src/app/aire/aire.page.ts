@@ -15,39 +15,27 @@ export class AirePage {
     @ViewChild('chartTemp', { static: false }) chartTemp;
     bars: any;
     colorArray: any;
+    // tslint:disable-next-line: variable-name
     chart_gauge: any;
     calidadAire: any;
-    air:any;
-    constructor(private ioTService: FirebaseService,private modalController: ModalController) {
-        this.ioTService.getAire().subscribe((res)=>{
-            this.createGauge(res);
-        })
-        this.ioTService.getAirQuality().subscribe((res)=>{
+    air: any;
+    servicio: any;
+    constructor(private ioTService: FirebaseService, private modalController: ModalController) {
+        this.ioTService.getServices().
+        subscribe((res) => {
             console.log(res);
-            this.air=res;
-        })
+            this.servicio = res;
+        });
     }
-    
-    cargarGauge(id:any){
-        this.ioTService.getObjectAirQuality(id).subscribe((res)=>{
+    cargarGauge(servicio: any) {
+        this.ioTService.getAirQuality(servicio).subscribe((res) => {
+            console.log(res);
             this.createGauge(res);
-            console.log(res)
-        })
-    }
-
-
-    async presentModal() {
-      const modal = await this.modalController.create({
-        component: ModalPageComponent,
-        componentProps:{
-            servicio: "calidadAire"
-        }
-      });
-      return await modal.present();
+        });
     }
 
     ionViewDidEnter() {
-        // this.createChartTemp();
+        this.createGauge();
     }
 
     // createChartTemp() {
@@ -88,7 +76,9 @@ export class AirePage {
     //         }
     //     });
     // }
-     createGauge(dato:any=45) {
+
+    // se muestra el gaugue
+     createGauge(dato: any = 45) {
         this.chart_gauge = c3.generate({
             bindto: '#chart_gauge',
             data: {
@@ -96,13 +86,13 @@ export class AirePage {
                     ['Calidad', dato]
                 ],
                 type: 'gauge',
-                onclick: function (d, i) { console.log("onclick", d, i); },
-                onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-                onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                onclick(d, i) { console.log('onclick', d, i); },
+                onmouseover(d, i) { console.log('onmouseover', d, i); },
+                onmouseout(d, i) { console.log('onmouseout', d, i); }
             },
             gauge: {
                 label: {
-                    format: function (value, ratio) {
+                    format(value, ratio) {
                         return value;
                     },
                     show: false // to turn off the min/max labels.

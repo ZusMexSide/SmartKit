@@ -1,22 +1,16 @@
 <ion-header translucent>
   <ion-toolbar>
     
-    <ion-title>{{servicio|uppercase}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="dismiss()">Close</ion-button>
-    </ion-buttons>
+    <ion-title>INSERTA CLAVE</ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <form (ngSubmit)="service()">
     <ion-item>
-      <ion-label>Sku</ion-label>
-      <ion-input type="text" [(ngModel)]="sku" name="sku"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Room</ion-label>
-      <ion-textarea [(ngModel)]="room" name="room"></ion-textarea>
+      <ion-label>CLAVE KIT</ion-label>
+      <ion-textarea [(ngModel)]="servicio" name="servicio"></ion-textarea>
     </ion-item>
     <ion-button expand="block"  type="submit" >Add</ion-button>
   </form>

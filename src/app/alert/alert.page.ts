@@ -9,54 +9,39 @@ import { FirebaseService } from '../firebase.service';
   styleUrls: ['./alert.page.scss'],
 })
 export class AlertPage implements OnInit {
-  sismos:any;
-  movimientos:any;
+  sismos: any;
+  movimientos: any;
   sismo: boolean;
-  constructor(public toastController: ToastController, private modalController :  ModalController , private iotFirebase:FirebaseService) {
-    this.iotFirebase.getSeismograph().subscribe((res)=>{
-      this.sismos=res;
-    })
-    
-    this.sismo=false
+  servicio: any;
+  data: any;
+  constructor(public toastController: ToastController,private iotFirebase: FirebaseService) {
+    this.iotFirebase.getServices().
+      subscribe((res) => {
+        this.servicio = res;
+        this.iotFirebase.getSeismograph(res).
+          subscribe((value) => {
+            this.data = value;
+          });
+      });
   }
-  
 
-  updateStatus(e:any,id:any,servicio:any){
-    var mens:any;
-    var con:any;
-    console.log(e);
-    var value = e.target.checked;
-    if (value === true) {
-      con=true;
-    } else if (value === false) {
-      con=false;
-    }
-    this.iotFirebase.updateStatus(id,con,servicio).then((res)=>{
-      console.log(res);
-    }).catch((err)=>{
-      console.log(err);
-    });
+  ngOnInit() {
   }
-  async openToast(e:any,id:any,servicio:any) {
-    var mens:any;
-    var con:any;
-    console.log(servicio);
-    var value = e.detail.checked;
+
+  async openToast(e: any) {
+    let mens: any;
+    let con: any;
+    const value = e.detail.checked;
     if (value === true) {
-      mens = "Activado";
-      con=true;
+      mens = 'Activado';
+      con = true;
     } else if (value === false) {
-      mens = "Desactivado";
-      con=false;
+      mens = 'Desactivado';
+      con = false;
     }
-    this.iotFirebase.updateStatus(id,con,servicio).then((res)=>{
+    this.iotFirebase.updateSismo(con, this.servicio).then((res) => {
       console.log(res);
-    }).catch((err)=>{
-      console.log(err);
-    });
-    this.iotFirebase.updateStatusService(id,con).then((res)=>{
-      console.log(res);
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err);
     });
     const toast = await this.toastController.create({
@@ -67,17 +52,5 @@ export class AlertPage implements OnInit {
       closeButtonText: 'Close',
     });
     toast.present();
-  }
-
-  ngOnInit() {
-  }
-  async presentModal(service) {
-    const modal = await this.modalController.create({
-      component: ModalPageComponent,
-      componentProps:{
-          servicio: service
-      }
-    });
-    return await modal.present();
   }
 }

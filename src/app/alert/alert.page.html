@@ -1,47 +1,39 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/rooms"></ion-back-button>
+      <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title>Sismo Alert</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button (click)="presentModal('sismos')">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  
   <ion-card class="card1">
     <ion-card-content>
       <ion-grid>
-        <ion-row  *ngFor="let s of sismos">
+        <ion-row  >
           <ion-col class="imgSismo">
             <div>
-              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
-                <ion-fab-button color="danger">
-                  <ion-icon name="thermometer"></ion-icon>
-                </ion-fab-button>
-              </ion-fab> -->
-              <h3 >{{s.room}}</h3>
+             
+              <h3 >Alerta</h3>
               <img class="img2" src="https://image.flaticon.com/icons/svg/1684/1684394.svg">
               
             </div>
           </ion-col>
           <ion-col>
             <div class="contentSismo">
-              <div *ngIf="s.valor!=true">
+              <div *ngIf="data!=true">
                 <h5>Desactivado</h5>
               </div>
-              <div *ngIf="s.valor!=false">
+              <div *ngIf="data!=false">
                 <h5>Activado</h5>
               </div>
-              <ion-toggle  checked="{{s.valor}}" (ionChange)="openToast($event,s.id,'sismos')"></ion-toggle>
-              <div *ngIf="s.valor!=true">
+              <ion-toggle  checked="{{data}}" (ionChange)="openToast($event)"></ion-toggle>
+              <div *ngIf="data!=true">
                 <h6>Sismo no detectado</h6>
               </div>
-              <div *ngIf="s.valor!=false">
+              <div *ngIf="data!=false">
                 <h6>Sismo detectado</h6>
               </div>
             </div>

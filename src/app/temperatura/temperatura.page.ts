@@ -16,18 +16,18 @@ export class TemperaturaPage {
   bars: any;
   colorArray: any;
   subscripcion: Subscription;
-  temp: any=23;
-  hum:any=34;
-  clima:any;
-  data:any;
-  id:any;
-  myDate: String = new Date().toISOString();
-  constructor(private ioTService: FirebaseService,private modalController: ModalController) {
-    this.ioTService.getTemperatureHumidity().subscribe((res)=>{
-      console.log(res);
-      this.data=res;
-    })
-
+  temp: any = 23;
+  hum: any = 34;
+  clima: any;
+  data: any;
+  id: any;
+  myDate: string = new Date().toISOString();
+  constructor(private ioTService: FirebaseService, private modalController: ModalController) {
+    this.ioTService.getServices().
+        subscribe((res) => {
+            console.log(res);
+            this.data = res;
+        });
   }
 
    ionViewDidEnter() {
@@ -74,24 +74,17 @@ export class TemperaturaPage {
   //   });
   // }
 
-  cargarDatos(id:any){
-    this.ioTService.getTemperature(id).subscribe((res)=>{
+  cargarDatos(servicio: any){
+    this.ioTService.getTemperature(servicio).
+    subscribe((res) => {
       console.log(res);
-      this.temp=res;
-    })
-    this.ioTService.getHumidity(id).subscribe((res)=>{
-      console.log(res);
-      this.hum=res;
-    })
-  }
-  async presentModal() {
-    const modal = await this.modalController.create({
-      component: ModalPageComponent,
-      componentProps:{
-          servicio: "temp-hum"
-      }
+      this.temp = res;
     });
-    return await modal.present();
+    this.ioTService.getHumidity(servicio).
+    subscribe((res) => {
+      console.log(res);
+      this.hum = res;
+    })
   }
 
 }

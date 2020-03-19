@@ -8,36 +8,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button (click)="presentModal('movimiento')">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  
   <ion-card class="card1">
     <ion-card-content>
       <ion-grid>
-        <ion-row *ngFor="let m of movimientos">
+        <ion-row >
           <ion-col class="imgSismo">
             <div>
-              <!-- <ion-fab vertical="end" vertical="center" slot="fixed">
-                <ion-fab-button color="danger">
-                  <ion-icon name="thermometer"></ion-icon>
-                </ion-fab-button>
-              </ion-fab> -->
-              <h3>{{m.room}}</h3>
+             
+              <h3>Movimiento</h3>
               <img class="img2" src="https://image.flaticon.com/icons/svg/394/394606.svg">
 
             </div>
           </ion-col>
           <ion-col>
             <div class="contentMovimiento">
-              <div *ngIf="m.valor!=true">
+              <div *ngIf="data!=true">
                 <h5>Desactivado</h5>
               </div>
-              <div *ngIf="m.valor!=false">
+              <div *ngIf="data!=false">
                 <h5>Activado</h5>
               </div>
-              <ion-toggle checked="{{m.valor}}" (ionChange)="openToast($event,m.id,'movimiento')"></ion-toggle>
+              <ion-toggle checked="{{data}}" (ionChange)="openToast($event)"></ion-toggle>
             </div>
           </ion-col>
         </ion-row>

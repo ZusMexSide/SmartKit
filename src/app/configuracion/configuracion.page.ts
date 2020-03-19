@@ -9,10 +9,10 @@ import { FirebaseService } from '../firebase.service';
   styleUrls: ['./configuracion.page.scss'],
 })
 export class ConfiguracionPage implements OnInit {
-  user:any;
-  username:any;
-  email:any;
-  photo:any;
+  user: any;
+  username: any;
+  email: any;
+  photo: any;
   constructor(private router: Router, private authService: AuthService,private iotFirebase:FirebaseService) {
     this.user = localStorage.getItem('user');
     this.username = JSON.parse(this.user).displayName;
@@ -22,7 +22,4 @@ export class ConfiguracionPage implements OnInit {
 
   ngOnInit() {
   }
-  
-  
-
 }

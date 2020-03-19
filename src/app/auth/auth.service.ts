@@ -13,19 +13,20 @@ export class AuthService {
   user: any;
   isLoggedIn = false;
   redirectUrl: string;
-  token:any
+  token: any;
   constructor(private authService: AngularFireAuth, private router: Router) {
     this.authService.authState.subscribe((user) => {
       if (user) {
         this.user = user;
         localStorage.setItem('user', JSON.stringify(this.user));
       } else {
-        localStorage.setItem('user', null)
+        localStorage.setItem('user', null);
       }
     })
   }
 
   registrarUsuario(email: string, pass: string) {
+    // tslint:disable-next-line: no-shadowed-variable
     return new Promise((resolve, reject) => {
       this.authService.auth.createUserWithEmailAndPassword(email, pass)
         .then(userData => resolve(userData),
@@ -38,7 +39,7 @@ export class AuthService {
       this.isLoggedIn = true;
       this.router.navigate(['/home']);
     } catch (e) {
-      alert(e.messagge)
+      alert(e.messagge);
     }
   }
   async logOutFirebase() {
@@ -47,7 +48,7 @@ export class AuthService {
       localStorage.removeItem('user');
       this.router.navigate(['/login'])
     } catch (e) {
-      alert(e.messagge)
+      alert(e.messagge);
     }
   }
   async loginWithInstance(login) {

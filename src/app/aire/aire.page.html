@@ -12,10 +12,9 @@
     <ion-card-content >
       <div >
         <ion-list>
-          <ion-item *ngFor="let a of air">
-            <ion-title>{{a.room}}</ion-title>
-            <!-- <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle> -->
-            <ion-button  slot="end" size="small" (click)="cargarGauge(a.id,a.room)">Ver Más</ion-button>
+          <ion-item>
+            <ion-title>Calidad De Aire</ion-title>
+            <ion-button  slot="end" size="small" (click)="cargarGauge(servicio)">Ver Más</ion-button>
           </ion-item>
         </ion-list>
       </div>
@@ -73,26 +72,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
   <br>
-  <p></p>
-<!-- 
-  <div class="container">
-
-    <div class="row">
-      <h5>Calidad del Aire</h5>
-      <canvas #chartTemp></canvas>
-    </div>
-
-  </div> -->
-
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button (click)="presentModal()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-<!-- </ion-content>
-<ion-content> -->
   <svg class = "chart" id = "chart_gauge"> 
 
   </svg>

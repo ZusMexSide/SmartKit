@@ -10,47 +10,41 @@ import { FirebaseService } from '../firebase.service';
 })
 export class MovimientoPage implements OnInit {
   movimiento: boolean;
-  movimientos:any;
-  constructor(public toastController: ToastController, private modalController :  ModalController , private iotFirebase:FirebaseService) { 
-    this.movimiento=true;
-    this.iotFirebase.getMovement().subscribe((res)=>{
-      this.movimientos=res;
-    })
-     
+  movimientos: any;
+  data: any;
+  servicio: any;
+  constructor(public toastController: ToastController, private iotFirebase: FirebaseService) {
+    // primero obtengo el que servicio tengo
+    this.iotFirebase.getServices().
+      subscribe((res) => {
+        // lo guardo en la variable servicio
+        this.servicio = res;
+        // consulto el valor del servicio del movimiento
+        this.iotFirebase.getMovement(res).
+          subscribe((value) => {
+            // y lo meto en una varible para usarlo en html
+            this.data = value;
+          });
+      });
   }
 
   ngOnInit() {
   }
-  async presentModal(service) {
-    const modal = await this.modalController.create({
-      component: ModalPageComponent,
-      componentProps:{
-          servicio: service
-      }
-    });
-    return await modal.present();
-  }
-
-  async openToast(e:any,id:any,servicio:any) {
-    var mens:any;
-    var con:any;
-    console.log(servicio);
-    var value = e.detail.checked;
+ // metodo que se realiza para cambiar el estado del toggle
+  async openToast(e: any) {
+    let mens: any;
+    let con: any;
+    const value = e.detail.checked;
     if (value === true) {
-      mens = "Activado";
-      con=true;
+      mens = 'Activado';
+      con = true;
     } else if (value === false) {
-      mens = "Desactivado";
-      con=false;
+      mens = 'Desactivado';
+      con = false;
     }
-    this.iotFirebase.updateStatus(id,con,servicio).then((res)=>{
+    this.iotFirebase.updateMovimiento(con, this.servicio).then((res) => {
       console.log(res);
-    }).catch((err)=>{
-      console.log(err);
-    });
-    this.iotFirebase.updateStatusService(id,con).then((res)=>{
-      console.log(res);
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err);
     });
     const toast = await this.toastController.create({

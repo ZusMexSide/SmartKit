@@ -8,33 +8,41 @@ import { FirebaseService } from '../firebase.service';
   styleUrls: ['./modal-page.component.scss'],
 })
 export class ModalPageComponent implements OnInit {
-  @Input() servicio;
-  sku: any;
-  room: any;
-  serv: any;
+  servicio: any;
   constructor(private modalCtrl: ModalController, private iotFirebase: FirebaseService) {
-    this.datos();
+    // obtengo el servicio que tiene la cuenta actual
+    this.iotFirebase.getServices().
+        subscribe((res) => {
+            console.log(res);
+            this.servicio = res;
+        });
   }
 
   ngOnInit() { }
-  async datos(){
-    await this.serv === this.servicio
-  }
+
   dismiss() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
     this.modalCtrl.dismiss({
-      'dismissed': true
+      dismissed: true
     });
   }
-  service() {
-    console.log(this.servicio, this.sku, this.room);
-    if (this.servicio === "calidadAire" || this.servicio === "temp-hum") {
-      this.iotFirebase.insertServiceNumericos(this.servicio, this.sku, this.room);
-    } else {
-      this.iotFirebase.insertServiciosBooleanos(this.servicio, this.sku, this.room);
-    }
-    this.dismiss();
-  }
+  service(){
+    // consultamos la lista de los servicios
+    this.iotFirebase.getListService(this.servicio).
+    subscribe((res) => {
+      console.log(res);
+      // creamos una condicion para ver si el servicio que se ingreso exite o no
+      if (res === null) {
+        // si es null entonces mandara una alerta que diga que no exite la clave
+        alert('No existe esa clave');
+      } else if (res != null) {
+        console.log('si existe');
+        // si exite la clave que se ingreso entonces se inserta ala base de datos y se cierra el modal
+        this.iotFirebase.insertKit(this.servicio);
+        this.dismiss();
+      }
+    });
 
+  }
 }

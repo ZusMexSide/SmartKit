@@ -13,22 +13,15 @@
     <ion-card-content>
       <div>
         <ion-list>
-          <ion-item *ngFor="let d of data">
-            <h3>{{d.room}}</h3>
+          <ion-item>
+            <h3>informacion</h3>
             <!-- <ion-toggle checked="{{d.estado}}"  (ionChange)="updateStatus($event,d.id)"></ion-toggle> -->
-            <ion-button slot="end" size="small" (click)="cargarDatos(d.id)">Ver Más</ion-button>
+            <ion-button slot="end" size="small" (click)="cargarDatos(data)">Ver Más</ion-button>
           </ion-item>
         </ion-list>
       </div>
     </ion-card-content>
   </ion-card>
-
-
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button (click)="presentModal()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
   <!-- <div>
     <ion-list>
       <ion-item *ngFor="let d of data">
