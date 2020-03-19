@@ -10,11 +10,12 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ModalPageComponent } from './modal-page/modal-page.component';
 import { RoomPipe } from './room.pipe';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
 
 var firebaseConfig = {
   apiKey: "AIzaSyDXWL_Ca1DFC21ZtSdIeNbMl_hzFu16gno",
@@ -27,7 +28,7 @@ var firebaseConfig = {
 };
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent,ModalPageComponent, RoomPipe],
+  declarations: [AppComponent, ModalPageComponent, RoomPipe],
   entryComponents: [],
   imports: [
     BrowserModule, 
@@ -43,7 +44,9 @@ var firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    NativeStorage,
+    Facebook
   ],
   bootstrap: [AppComponent]
 })

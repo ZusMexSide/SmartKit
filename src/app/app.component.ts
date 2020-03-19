@@ -3,6 +3,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { timer } from 'rxjs';
+import { AuthService } from './auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,17 +16,28 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private auth: AuthService,
+    private router: Router
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      setTimeout(() => {
+        this.showSplash = false;
+      }, 3000);
+    //   console.log('impresion del valor obtenido al llamar check', this.auth.checkSession());
+    //   this.auth.checkSession().finally(() => {
+    //   this.router.navigate(['/home']);
+    //   console.log('if true');
+    // }).catch(() => {
+    //   this.router.navigate(['/login']);
+    //   console.log('if false');
+    // });
 
-      timer(3000).subscribe(() => { this.showSplash = false; })
+      this.statusBar.styleDefault();
     });
   }
 }
